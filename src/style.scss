@@ -1,0 +1,162 @@
+/* Resets */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(40deg, rgba(255, 0, 0, 0.213), #eee);
+  background-size: cover;
+  font-family: "Teachers", sans-serif;
+  color: #111;
+}
+
+main {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 25% 55% 20%;
+}
+
+/* === Left Top === */
+.left-t {
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-t .logo {
+  height: 20px;
+  width: 20px;
+  rotate: 45deg;
+  background: black;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+
+.left-t .logo:hover {
+  rotate: 90deg;
+  border-radius: 4px;
+}
+
+.left-t nav {
+  text-align: right;
+}
+
+.left-t nav a {
+  text-decoration: none;
+  color: #111;
+}
+
+.left-t nav ul {
+  list-style: none;
+}
+
+.left-t nav li:nth-child(1) {
+  font-weight: bold;
+  margin-bottom: 40px;
+  font-size: large;
+}
+
+.left-t nav li:not(:nth-child(1)) a {
+  color: red;
+}
+
+/* Left Center */
+.left-c {
+  padding: 40px;
+}
+
+.left-c h1 {
+  text-transform: uppercase;
+  font-size: 5vw;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 18px;
+}
+
+.left-c h1::selection {
+  background: orangered;
+}
+
+/* Left Bottom */
+.left-b {
+  padding: 40px;
+}
+.left-b p {
+  width: 80%;
+}
+
+/* === Right Section === */
+.right {
+  grid-column: 2;
+  grid-row: 1/4;
+  padding: 30px;
+}
+
+video {
+  height: 100%;
+  width: 90%;
+  object-fit: cover;
+}
+
+.icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  color: white;
+  transform: translate(-20%, -50%);
+  border-radius: 50%;
+  background: rgba(255, 192, 203, 0.473);
+  /* Centering */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-duration: 1s;
+  cursor: pointer;
+}
+
+.icon svg {
+  padding: 20px;
+  height: 100px;
+  width: 100px;
+}
+
+/* Responsive Module */
+@media (max-width: 700px) {
+  main {
+    grid-template-columns: 100%;
+    grid-template-rows: 20% 30% 10% 40%;
+  }
+  .left-t {
+    padding: 20px;
+  }
+  .left-c {
+    padding: 20px;
+  }
+  .left-b {
+    padding: 20px;
+  }
+  .left-b p {
+    width: 100%;
+  }
+  .left-c h1 {
+    font-size: 10vw;
+    line-height: 1;
+    letter-spacing: 8px;
+  }
+  .right {
+    grid-row: 4;
+    grid-column: 1;
+  }
+  video {
+    height: 100%;
+    width: 100%;
+  }
+  .icon {
+    display: none;
+  }
+}
